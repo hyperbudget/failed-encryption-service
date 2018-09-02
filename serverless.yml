@@ -17,9 +17,17 @@ provider:
   name: aws
   runtime: python3.6
   region: eu-west-2
+  stage: ${env:TRAVIS_BRANCH, 'dev'}
+  apiKeys:
+    - ${self:provider.stage}-encryptionAPIKey
 
 plugins:
   - serverless-offline-python
+  - serverless-python-requirements
+
+custom:
+  pythonRequirements:
+    dockerizePip: true
 
 functions:
   encryptData:
@@ -28,10 +36,11 @@ functions:
       - http:
           path: encrypt
           method: post
+          private: true
   decryptData:
     handler: handler.decrypt
     events:
       - http:
           path: decrypt
           method: post
-
+          private: true

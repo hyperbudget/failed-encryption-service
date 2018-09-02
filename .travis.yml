@@ -1,4 +1,9 @@
 language: python
 script:
   - npm install
-  - sls deploy
+  - pipenv install .
+  - sls deploy -v -force
+branches:
+  only:
+    - master
+    - staging
