@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 gnupg = "*"
+falcon = "*"
 
 [dev-packages]
 pylint = "*"
