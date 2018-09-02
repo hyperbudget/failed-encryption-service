@@ -9,7 +9,8 @@ import json
 from crypto import encryptData, decryptData
 from util import getLambdaRequest
 
-def encrypt(event):
+def encrypt(event, context):
+  #pylint: disable=unused-argument
   """Encrypt a given string with the password, return lambda response with
   base64 encoded encrypted string"""
 
@@ -39,7 +40,8 @@ def encrypt(event):
 
   return response
 
-def decrypt(event):
+def decrypt(event, context):
+  #pylint: disable=unused-argument
   """Decrypt data"""
 
   request = None
