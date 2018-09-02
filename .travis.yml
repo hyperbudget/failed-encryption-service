@@ -1,0 +1,4 @@
+language: python
+script:
+  - npm install
+  - sls deploy

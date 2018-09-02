@@ -1,0 +1,5 @@
+[MASTER]
+
+indent-string="  "
+indent-after-paren=2
+function-naming-style=camelCase
