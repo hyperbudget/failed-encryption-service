@@ -1,8 +1,14 @@
 language: python
+python:
+- "3.6"
+services:
+  - docker
 script:
   - npm install
+  - npm install -g serverless
+  - pip install pipenv
   - pipenv install .
-  - sls deploy -v --force
+  - sls deploy -v --force --conceal
 branches:
   only:
     - master
