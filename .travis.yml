@@ -2,7 +2,7 @@ language: python
 script:
   - npm install
   - pipenv install .
-  - sls deploy -v -force
+  - sls deploy -v --force
 branches:
   only:
     - master
