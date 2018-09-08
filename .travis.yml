@@ -4,8 +4,8 @@ python:
 services:
   - docker
 script:
-  - npm install
   - npm install -g serverless
+  - npm install serverless-offline-python serverless-python-requirements
   - pip install pipenv
   - pipenv install .
   - sls deploy -v --force --conceal
